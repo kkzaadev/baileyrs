@@ -1,5 +1,5 @@
 {
-  "name": "@oxidezap/baileyrs",
+  "name": "whatszars",
   "type": "module",
   "version": "0.0.18",
   "description": "A Rust-powered WhatsApp Web library for JavaScript, with a Baileys-compatible API",
@@ -13,13 +13,13 @@
     "webassembly",
     "automation"
   ],
-  "homepage": "https://github.com/oxidezap/baileyrs#readme",
+  "homepage": "https://github.com/oxidezap/whatszars#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oxidezap/baileyrs.git"
+    "url": "git+https://github.com/oxidezap/whatszars.git"
   },
   "bugs": {
-    "url": "https://github.com/oxidezap/baileyrs/issues"
+    "url": "https://github.com/oxidezap/whatszars/issues"
   },
   "license": "MIT",
   "author": "João Lucas <jlucaso@hotmail.com>",
@@ -54,8 +54,8 @@
     "format:check": "oxfmt --check src Example",
     "lint": "tsc && oxlint",
     "lint:fix": "oxlint --fix && oxfmt src Example",
-    "prepack": "npm run build",
-    "prepare": "npm run build",
+    "prepack": "tsc -P tsconfig.build.json && tsc-esm-fix --tsconfig=tsconfig.build.json --ext=.js",
+    "prepare": "tsc -P tsconfig.build.json && tsc-esm-fix --tsconfig=tsconfig.build.json --ext=.js",
     "test": "node --experimental-transform-types --experimental-test-isolation=none --test 'src/**/*.test.ts'",
     "test:e2e": "NODE_TLS_REJECT_UNAUTHORIZED=0 ADV_SECRET_KEY=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA= SOCKET_URL=wss://127.0.0.1:8080/ws/chat node --experimental-transform-types --experimental-test-isolation=none --test 'src/**/*.test-e2e.ts'"
   },
